@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TÖRK Equipamentos — Equipamentos Profissionais de Musculação</title>
+<meta name="description" content="Equipamentos profissionais de musculação para academias, studios e home gym. Qualidade que resiste à performance. Solicite orçamento.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ── RESET ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #0a0a0a; color: #fff; overflow-x: hidden; }
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ── VARIÁVEIS ── */
+:root {
+  --laranja: #FF6B00;
+  --laranja-escuro: #cc5500;
+  --escuro: #0a0a0a;
+  --cinza-escuro: #111111;
+  --cinza-medio: #1a1a1a;
+  --cinza-claro: #2a2a2a;
+  --texto-muted: #888;
+  --texto-claro: #ccc;
+  --branco: #ffffff;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1f1f1f;
+  padding: 0 40px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 4px;
+  color: var(--branco);
+}
+.nav-logo span { color: var(--laranja); }
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a { font-size: 13px; font-weight: 600; color: var(--texto-muted); transition: color .2s; letter-spacing: 0.5px; }
+.nav-links a:hover { color: #fff; }
+.nav-cta {
+  background: var(--laranja);
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background .2s, transform .1s;
+}
+.nav-cta:hover { background: var(--laranja-escuro); transform: translateY(-1px); }
+@media (max-width:768px) { .nav-links { display: none; } nav { padding: 0 20px; } }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  padding-top: 68px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(255,107,0,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 80%, rgba(255,107,0,0.06) 0%, transparent 50%);
+}
+.hero-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(255,107,0,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,107,0,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-content { position: relative; z-index: 2; padding: 40px 24px; max-width: 900px; }
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,107,0,0.1);
+  border: 1px solid rgba(255,107,0,0.3);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--laranja);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+.hero h1 {
+  font-size: clamp(40px, 7vw, 80px);
+  font-weight: 900;
+  line-height: 1.0;
+  letter-spacing: -2px;
+  margin-bottom: 24px;
+}
+.hero h1 .destaque { color: var(--laranja); }
+.hero p {
+  font-size: clamp(16px, 2vw, 20px);
+  color: var(--texto-claro);
+  line-height: 1.7;
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+.hero-btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--laranja);
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all .2s;
+  letter-spacing: 0.3px;
+}
+.btn-primary:hover { background: var(--laranja-escuro); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(255,107,0,0.3); }
+.btn-ghost {
+  background: transparent;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 700;
+  border: 1px solid #333;
+  transition: all .2s;
+}
+.btn-ghost:hover { border-color: #666; background: rgba(255,255,255,0.05); }
+.hero-stats {
+  display: flex;
+  gap: 48px;
+  justify-content: center;
+  margin-top: 64px;
+  padding-top: 40px;
+  border-top: 1px solid #1f1f1f;
+  flex-wrap: wrap;
+}
+.stat-num { font-size: 36px; font-weight: 900; color: var(--laranja); letter-spacing: -1px; }
+.stat-label { font-size: 13px; color: var(--texto-muted); font-weight: 500; margin-top: 4px; }
+
+/* ── MARCAS ── */
+.logos-bar {
+  background: #111;
+  border-top: 1px solid #1f1f1f;
+  border-bottom: 1px solid #1f1f1f;
+  padding: 24px 40px;
+  text-align: center;
+}
+.logos-bar p { font-size: 12px; color: var(--texto-muted); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 16px; font-weight: 600; }
+.logos-list { display: flex; gap: 40px; justify-content: center; align-items: center; flex-wrap: wrap; }
+.logos-list span { font-size: 14px; font-weight: 800; letter-spacing: 2px; color: #444; text-transform: uppercase; }
+
+/* ── SEÇÕES COMUNS ── */
+section { padding: 100px 40px; }
+@media (max-width:768px) { section { padding: 60px 20px; } }
+.section-tag {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--laranja);
+  margin-bottom: 12px;
+}
+.section-title { font-size: clamp(28px, 4vw, 44px); font-weight: 900; letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px; }
+.section-sub { font-size: 16px; color: var(--texto-muted); line-height: 1.7; max-width: 560px; }
+.text-center { text-align: center; }
+.text-center .section-sub { margin: 0 auto; }
+
+/* ── PRODUTOS ── */
+.produtos { background: var(--escuro); }
+.produtos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2px; margin-top: 60px; }
+.produto-card {
+  background: var(--cinza-medio);
+  padding: 40px 32px;
+  position: relative;
+  overflow: hidden;
+  transition: background .3s;
+  cursor: default;
+}
+.produto-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--laranja);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s ease;
+}
+.produto-card:hover { background: #161616; }
+.produto-card:hover::before { transform: scaleX(1); }
+.produto-icon { font-size: 40px; margin-bottom: 20px; }
+.produto-card h3 { font-size: 20px; font-weight: 800; margin-bottom: 10px; }
+.produto-card p { font-size: 14px; color: var(--texto-muted); line-height: 1.7; }
+.produto-items {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.produto-item {
+  font-size: 12px;
+  color: #666;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+.produto-item::before { content: '—'; color: var(--laranja); font-weight: 700; }
+
+/* ── DIFERENCIAIS ── */
+.diferenciais { background: var(--cinza-escuro); }
+.dif-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-top: 60px; }
+.dif-card {
+  background: var(--cinza-medio);
+  border-radius: 16px;
+  padding: 32px 28px;
+  border: 1px solid #222;
+  transition: border-color .3s, transform .3s;
+}
+.dif-card:hover { border-color: var(--laranja); transform: translateY(-4px); }
+.dif-num {
+  font-size: 48px;
+  font-weight: 900;
+  color: rgba(255,107,0,0.15);
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.dif-card h3 { font-size: 17px; font-weight: 800; margin-bottom: 10px; }
+.dif-card p { font-size: 14px; color: var(--texto-muted); line-height: 1.7; }
+
+/* ── COMO FUNCIONA ── */
+.como { background: var(--escuro); }
+.como-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; margin-top: 60px; position: relative; }
+.como-step {
+  padding: 40px 32px;
+  border: 1px solid #1a1a1a;
+  position: relative;
+}
+.como-step-num {
+  font-size: 56px;
+  font-weight: 900;
+  color: rgba(255,107,0,0.12);
+  letter-spacing: -2px;
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.como-step h3 { font-size: 16px; font-weight: 800; margin-bottom: 10px; color: #fff; }
+.como-step p { font-size: 14px; color: var(--texto-muted); line-height: 1.6; }
+.como-step .step-icon { font-size: 24px; margin-bottom: 12px; }
+
+/* ── CTA BANNER ── */
+.cta-banner {
+  background: var(--laranja);
+  padding: 80px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta-banner::before {
+  content: 'TÖRK';
+  position: absolute;
+  font-size: 200px;
+  font-weight: 900;
+  letter-spacing: 20px;
+  color: rgba(0,0,0,0.08);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+}
+.cta-banner h2 { font-size: clamp(28px, 4vw, 48px); font-weight: 900; color: #fff; margin-bottom: 12px; letter-spacing: -1px; position: relative; }
+.cta-banner p { font-size: 17px; color: rgba(255,255,255,0.85); margin-bottom: 36px; position: relative; }
+.btn-white {
+  background: #fff;
+  color: var(--laranja);
+  padding: 16px 36px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all .2s;
+  position: relative;
+}
+.btn-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(0,0,0,0.2); }
+
+/* ── FORM ── */
+.form-section { background: var(--cinza-escuro); }
+.form-wrapper {
+  max-width: 640px;
+  margin: 60px auto 0;
+  background: var(--cinza-medio);
+  border-radius: 20px;
+  padding: 48px 40px;
+  border: 1px solid #222;
+}
+@media (max-width:600px) { .form-wrapper { padding: 32px 20px; } }
+.form-row { margin-bottom: 20px; }
+.form-row label { display: block; font-size: 12px; font-weight: 700; color: #888; letter-spacing: 0.5px; margin-bottom: 8px; text-transform: uppercase; }
+.form-row input, .form-row select, .form-row textarea {
+  width: 100%;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  transition: border-color .2s;
+  outline: none;
+}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--laranja); }
+.form-row select option { background: #1a1a1a; }
+.form-row textarea { resize: vertical; min-height: 100px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+@media (max-width:500px) { .form-grid { grid-template-columns: 1fr; } }
+.form-submit {
+  width: 100%;
+  background: var(--laranja);
+  color: #fff;
+  border: none;
+  padding: 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all .2s;
+  margin-top: 8px;
+  letter-spacing: 0.3px;
+}
+.form-submit:hover { background: var(--laranja-escuro); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(255,107,0,0.3); }
+.form-note { font-size: 12px; color: #555; text-align: center; margin-top: 14px; line-height: 1.6; }
+
+/* ── FOOTER ── */
+footer {
+  background: #050505;
+  border-top: 1px solid #1a1a1a;
+  padding: 48px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-brand { font-size: 22px; font-weight: 900; letter-spacing: 4px; }
+.footer-brand span { color: var(--laranja); }
+.footer-links { display: flex; gap: 24px; }
+.footer-links a { font-size: 13px; color: #555; font-weight: 500; transition: color .2s; }
+.footer-links a:hover { color: #fff; }
+.footer-copy { font-size: 12px; color: #333; width: 100%; text-align: center; padding-top: 24px; border-top: 1px solid #111; }
+
+/* ── WHATSAPP FLOAT ── */
+.wpp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+  z-index: 999;
+  transition: transform .2s, box-shadow .2s;
+  cursor: pointer;
+}
+.wpp-float:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.5); }
+.wpp-float svg { width: 30px; height: 30px; fill: #fff; }
+
+/* ── REVEAL ANIMATION ── */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">TÖR<span>K</span></div>
+  <div class="nav-links">
+    <a href="#produtos">Produtos</a>
+    <a href="#diferenciais">Diferenciais</a>
+    <a href="#como-funciona">Como Funciona</a>
+    <a href="#orcamento" class="nav-cta">Solicitar Orçamento</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content reveal">
+    <div class="hero-badge">⚡ Equipamentos Profissionais de Musculação</div>
+    <h1>Equipe sua <span class="destaque">Academia</span><br>com Quem Entende de Força</h1>
+    <p>Equipamentos profissionais de musculação para academias, studios e home gym. Resistência e performance que o seu cliente exige.</p>
+    <div class="hero-btns">
+      <a href="#orcamento" class="btn-primary">Solicitar Orçamento Grátis →</a>
+      <a href="#produtos" class="btn-ghost">Ver Linha de Produtos</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">+500</div>
+        <div class="stat-label">Academias Equipadas</div>
+      </div>
+      <div>
+        <div class="stat-num">100%</div>
+        <div class="stat-label">Equipamentos Profissionais</div>
+      </div>
+      <div>
+        <div class="stat-num">24h</div>
+        <div class="stat-label">Resposta para Orçamento</div>
+      </div>
+      <div>
+        <div class="stat-num">Brasil</div>
+        <div class="stat-label">Entrega em Todo País</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOGOS BAR -->
+<div class="logos-bar">
+  <p>Atendemos todos os tipos de espaço</p>
+  <div class="logos-list">
+    <span>Academias</span>
+    <span>Studios</span>
+    <span>Home Gym</span>
+    <span>Condomínios</span>
+    <span>Corporativo</span>
+    <span>CrossFit</span>
+  </div>
+</div>
+
+<!-- PRODUTOS -->
+<section class="produtos" id="produtos">
+  <div class="text-center reveal">
+    <div class="section-tag">Linha de Produtos</div>
+    <h2 class="section-title">Tudo que sua academia<br>precisa em um lugar</h2>
+    <p class="section-sub">Equipamentos desenvolvidos para resistir ao uso intenso diário, sem abrir mão do acabamento.</p>
+  </div>
+  <div class="produtos-grid">
+    <div class="produto-card reveal">
+      <div class="produto-icon">🏋️</div>
+      <h3>Máquinas Guiadas</h3>
+      <p>Aparelhos de musculação profissional com guias de precisão para isolamento muscular seguro e eficiente.</p>
+      <div class="produto-items">
+        <div class="produto-item">Crossover / Funcional</div>
+        <div class="produto-item">Leg Press 45°</div>
+        <div class="produto-item">Cadeira Extensora / Flexora</div>
+        <div class="produto-item">Puxador / Remada</div>
+        <div class="produto-item">Desenvolvimento Ombro</div>
+        <div class="produto-item">Bíceps e Tríceps Máquina</div>
+      </div>
+    </div>
+    <div class="produto-card reveal">
+      <div class="produto-icon">🔩</div>
+      <h3>Pesos Livres</h3>
+      <p>Halteres, barras, anilhas e racks para treino livre com acabamento profissional e durabilidade comprovada.</p>
+      <div class="produto-items">
+        <div class="produto-item">Halteres Emborrachados</div>
+        <div class="produto-item">Barras Olímpicas</div>
+        <div class="produto-item">Anilhas Polidas / Emborrachadas</div>
+        <div class="produto-item">Rack de Halteres</div>
+        <div class="produto-item">Power Rack / Gaiola</div>
+        <div class="produto-item">Banco Supino Plano/Inclinado</div>
+      </div>
+    </div>
+    <div class="produto-card reveal">
+      <div class="produto-icon">🏠</div>
+      <h3>Home Gym</h3>
+      <p>Linha especial para quem quer qualidade profissional em casa. Equipamentos compactos, resistentes e com design premium.</p>
+      <div class="produto-items">
+        <div class="produto-item">Estação Multifuncional</div>
+        <div class="produto-item">Rack Compacto</div>
+        <div class="produto-item">Kit Halteres Ajustáveis</div>
+        <div class="produto-item">Banco Regulável</div>
+        <div class="produto-item">Puxador Compacto</div>
+      </div>
+    </div>
+    <div class="produto-card reveal">
+      <div class="produto-icon">📦</div>
+      <h3>Academia Completa</h3>
+      <p>Monte sua academia do zero. Consultoria personalizada para escolher os equipamentos certos para o seu espaço e público.</p>
+      <div class="produto-items">
+        <div class="produto-item">Projeto personalizado</div>
+        <div class="produto-item">Lista de equipamentos por m²</div>
+        <div class="produto-item">Entrega e montagem incluídas</div>
+        <div class="produto-item">Consultoria gratuita</div>
+        <div class="produto-item">Parcelamento facilitado</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section class="diferenciais" id="diferenciais">
+  <div class="text-center reveal">
+    <div class="section-tag">Por que a TÖRK</div>
+    <h2 class="section-title">Equipamentos feitos para<br>quem leva a sério</h2>
+    <p class="section-sub">Não vendemos apenas ferro. Vendemos performance, durabilidade e a certeza de que seu cliente vai voltar amanhã.</p>
+  </div>
+  <div class="dif-grid">
+    <div class="dif-card reveal">
+      <div class="dif-num">01</div>
+      <h3>Qualidade Profissional</h3>
+      <p>Materiais selecionados, acabamento de alto padrão e tolerância de precisão para uso intenso diário em academias comerciais.</p>
+    </div>
+    <div class="dif-card reveal">
+      <div class="dif-num">02</div>
+      <h3>Entrega em Todo o Brasil</h3>
+      <p>Logística estruturada para atender do sul ao norte do país. Você foca no seu negócio, a gente cuida da entrega.</p>
+    </div>
+    <div class="dif-card reveal">
+      <div class="dif-num">03</div>
+      <h3>Orçamento em 24 Horas</h3>
+      <p>Sem burocracia. Você envia as suas necessidades e em até 24h tem uma proposta personalizada na sua mão.</p>
+    </div>
+    <div class="dif-card reveal">
+      <div class="dif-num">04</div>
+      <h3>Montagem Incluída</h3>
+      <p>Nossa equipe técnica realiza a montagem e instalação dos equipamentos. Você abre a academia pronta para treinar.</p>
+    </div>
+    <div class="dif-card reveal">
+      <div class="dif-num">05</div>
+      <h3>Garantia Real</h3>
+      <p>Garantia de fábrica nos equipamentos com suporte pós-venda. Problemas? A gente resolve — sem enrolação.</p>
+    </div>
+    <div class="dif-card reveal">
+      <div class="dif-num">06</div>
+      <h3>Parcelamento Facilitado</h3>
+      <p>Condições especiais de pagamento para sua academia ou projeto de home gym. Consulte condições na hora do orçamento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="como" id="como-funciona">
+  <div class="text-center reveal">
+    <div class="section-tag">Processo</div>
+    <h2 class="section-title">Como funciona</h2>
+    <p class="section-sub">Do orçamento à academia pronta em 4 passos simples.</p>
+  </div>
+  <div class="como-steps">
+    <div class="como-step reveal">
+      <div class="como-step-num">01</div>
+      <div class="step-icon">📋</div>
+      <h3>Solicite o Orçamento</h3>
+      <p>Preencha o formulário abaixo com as informações do seu projeto. Quanto mais detalhe, melhor a proposta.</p>
+    </div>
+    <div class="como-step reveal">
+      <div class="como-step-num">02</div>
+      <div class="step-icon">📞</div>
+      <h3>Consultoria Personalizada</h3>
+      <p>Nosso time entra em contato em até 24h para entender suas necessidades e apresentar a melhor solução.</p>
+    </div>
+    <div class="como-step reveal">
+      <div class="como-step-num">03</div>
+      <div class="step-icon">🚚</div>
+      <h3>Entrega Agendada</h3>
+      <p>Confirmado o pedido, agendamos a entrega para o prazo que melhor funciona para você e sua obra.</p>
+    </div>
+    <div class="como-step reveal">
+      <div class="como-step-num">04</div>
+      <div class="step-icon">🏋️</div>
+      <h3>Academia Pronta</h3>
+      <p>Montagem e instalação realizadas pelo nosso time técnico. Sua academia pronta para abrir as portas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner">
+  <h2>Pronto para equipar sua academia?</h2>
+  <p>Fale com um especialista agora e receba uma proposta sem compromisso.</p>
+  <a href="#orcamento" class="btn-white">📋 Quero meu orçamento grátis</a>
+</div>
+
+<!-- FORMULÁRIO -->
+<section class="form-section" id="orcamento">
+  <div class="text-center reveal">
+    <div class="section-tag">Orçamento</div>
+    <h2 class="section-title">Solicite seu orçamento</h2>
+    <p class="section-sub">Preencha o formulário e receba uma proposta personalizada em até 24 horas.</p>
+  </div>
+  <div class="form-wrapper reveal">
+    <div class="form-grid">
+      <div class="form-row">
+        <label>Seu Nome</label>
+        <input type="text" id="nome" placeholder="Ex: Carlos Silva" />
+      </div>
+      <div class="form-row">
+        <label>WhatsApp</label>
+        <input type="tel" id="telefone" placeholder="(00) 00000-0000" />
+      </div>
+    </div>
+    <div class="form-row">
+      <label>Tipo de Espaço</label>
+      <select id="tipo">
+        <option value="">Selecione...</option>
+        <option>Academia Comercial</option>
+        <option>Studio de Personal Trainer</option>
+        <option>Home Gym</option>
+        <option>Academia Corporativa / Condomínio</option>
+        <option>CrossFit / Funcional</option>
+        <option>Outro</option>
+      </select>
+    </div>
+    <div class="form-row">
+      <label>Cidade / Estado</label>
+      <input type="text" id="cidade" placeholder="Ex: São Paulo / SP" />
+    </div>
+    <div class="form-row">
+      <label>O que você precisa?</label>
+      <textarea id="mensagem" placeholder="Descreva os equipamentos que precisa, quantidade aproximada, metragem do espaço... quanto mais detalhe, melhor a proposta!"></textarea>
+    </div>
+    <button class="form-submit" onclick="enviarWpp()">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar pelo WhatsApp
+    </button>
+    <p class="form-note">🔒 Seus dados são confidenciais. Retorno garantido em até 24 horas úteis.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">TÖR<span>K</span></div>
+  <div class="footer-links">
+    <a href="#produtos">Produtos</a>
+    <a href="#diferenciais">Diferenciais</a>
+    <a href="#orcamento">Orçamento</a>
+    <a href="https://instagram.com/tork_strength" target="_blank">@tork_strength</a>
+  </div>
+  <div class="footer-copy">© 2026 TÖRK Equipamentos — Todos os direitos reservados</div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a class="wpp-float" href="https://wa.me/5500000000000" target="_blank" title="Falar no WhatsApp" id="wppFloat">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// ── REVEAL ON SCROLL ──
+const reveals = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+}, { threshold: 0.1 });
+reveals.forEach(r => obs.observe(r));
+
+// ── ENVIAR WHATSAPP ──
+function enviarWpp() {
+  const nome     = document.getElementById('nome').value.trim();
+  const telefone = document.getElementById('telefone').value.trim();
+  const tipo     = document.getElementById('tipo').value;
+  const cidade   = document.getElementById('cidade').value.trim();
+  const mensagem = document.getElementById('mensagem').value.trim();
+
+  if (!nome || !telefone) {
+    alert('Por favor, preencha ao menos seu nome e WhatsApp.');
+    return;
+  }
+
+  const texto = `Olá, TÖRK! Gostaria de solicitar um orçamento.
+
+*Nome:* ${nome}
+*Telefone:* ${telefone}
+*Tipo de espaço:* ${tipo || 'Não informado'}
+*Cidade:* ${cidade || 'Não informada'}
+
+*O que preciso:*
+${mensagem || 'Entrar em contato para mais detalhes.'}`;
+
+  const numero = WPP_TORK;
+  window.open(`https://wa.me/${numero}?text=${encodeURIComponent(texto)}`, '_blank');
+}
+
+// ── NÚMERO WHATSAPP ──
+// Altere o número abaixo para o WhatsApp da Tork (formato: 5511999999999)
+const WPP_TORK = '5541988744889';
+document.getElementById('wppFloat').href = `https://wa.me/${WPP_TORK}`;
+</script>
+</body>
+</html>
