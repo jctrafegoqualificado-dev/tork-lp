@@ -23,6 +23,52 @@ a { text-decoration: none; color: inherit; }
 /* ── CANVAS PARTÍCULAS ── */
 #particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 0; }
 
+/* ── GALERIA ANILHAS ── */
+.galeria { background: #060606; padding: 80px 40px; overflow: hidden; }
+@media(max-width:768px){ .galeria { padding: 60px 20px; } }
+.galeria-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 8px; margin-top: 48px;
+  border-radius: 20px; overflow: hidden;
+}
+@media(max-width:768px){
+  .galeria-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 180px 180px 180px; }
+  .galeria-item:nth-child(1){ grid-column: 1 / -1; }
+}
+.galeria-item {
+  position: relative; overflow: hidden; cursor: pointer;
+  background: #111;
+}
+.galeria-item:nth-child(1) { grid-row: 1 / 3; }
+.galeria-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .6s cubic-bezier(0.16,1,0.3,1), filter .6s;
+  filter: brightness(0.75) saturate(0.8);
+}
+.galeria-item:hover img { transform: scale(1.08); filter: brightness(0.9) saturate(1); }
+.galeria-item::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
+  transition: opacity .3s;
+}
+.galeria-item:hover::after { opacity: 0.5; }
+.galeria-item .galeria-label {
+  position: absolute; bottom: 14px; left: 16px; z-index: 2;
+  font-size: 12px; font-weight: 700; color: #fff;
+  background: rgba(73,191,235,0.15);
+  border: 1px solid rgba(73,191,235,0.3);
+  padding: 4px 12px; border-radius: 20px;
+  backdrop-filter: blur(6px);
+  letter-spacing: 0.5px;
+}
+.galeria-nota {
+  text-align: center; margin-top: 16px;
+  font-size: 12px; color: #333;
+  font-style: italic;
+}
+
 /* ── ANILHAS DECORATIVAS ── */
 .anilha {
   position: absolute; border-radius: 50%; pointer-events: none;
@@ -70,6 +116,7 @@ a { text-decoration: none; color: inherit; }
 .equip-visual-inner {
   max-width: 1100px; margin: 0 auto;
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+  position: relative; z-index: 2;
 }
 @media(max-width:768px){.equip-visual-inner{grid-template-columns:1fr;}}
 .equip-visual-text .section-tag { margin-bottom: 12px; }
@@ -152,6 +199,7 @@ nav {
   filter: blur(80px);
   animation: orb-float 8s ease-in-out infinite alternate;
   pointer-events: none;
+  z-index: 1;
 }
 .hero-orb-1 { width: 500px; height: 500px; background: rgba(73,191,235,0.12); top: -100px; left: -100px; animation-delay: 0s; }
 .hero-orb-2 { width: 400px; height: 400px; background: rgba(37,211,102,0.08); bottom: -50px; right: -100px; animation-delay: -3s; }
@@ -173,7 +221,7 @@ nav {
   0%   { background-position: 0 0; }
   100% { background-position: 60px 60px; }
 }
-.hero-content { position: relative; z-index: 2; padding: 40px 24px; max-width: 960px; }
+.hero-content { position: relative; z-index: 3; padding: 40px 24px; max-width: 960px; }
 
 .hero-badge {
   display: inline-flex; align-items: center; gap: 8px;
@@ -692,6 +740,38 @@ footer {
     <span class="ticker-item">Studio Profissional<span class="ticker-dot"></span></span>
     <span class="ticker-item">Parcelamento Facilitado<span class="ticker-dot"></span></span>
   </div>
+</div>
+
+<!-- GALERIA -->
+<div class="galeria">
+  <div class="text-center reveal">
+    <div class="section-tag">Nossos Equipamentos</div>
+    <h2 class="section-title">Construídos para<br>performance real</h2>
+    <p class="section-sub" style="margin:0 auto;">Acabamento profissional em cada detalhe — das anilhas às máquinas guiadas.</p>
+  </div>
+  <div class="galeria-grid reveal">
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80" alt="Academia equipada profissional" loading="lazy"/>
+      <div class="galeria-label">Academia Completa</div>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&q=80" alt="Anilhas musculação" loading="lazy"/>
+      <div class="galeria-label">Anilhas Profissionais</div>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&q=80" alt="Barbell halteres" loading="lazy"/>
+      <div class="galeria-label">Pesos Livres</div>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?w=600&q=80" alt="Equipamentos musculação" loading="lazy"/>
+      <div class="galeria-label">Máquinas Guiadas</div>
+    </div>
+    <div class="galeria-item">
+      <img src="https://images.unsplash.com/photo-1574680178050-55c6a6a96e0a?w=600&q=80" alt="Home gym equipado" loading="lazy"/>
+      <div class="galeria-label">Home Gym</div>
+    </div>
+  </div>
+  <p class="galeria-nota">📸 Fotos ilustrativas — imagens reais dos produtos TÖRK em breve</p>
 </div>
 
 <!-- PRODUTOS -->
